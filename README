@@ -4,15 +4,16 @@
 1. Set up Bundler
      rake rails:template LOCATION=http://github.com/bazzel/rails-templates/raw/master/bundler.rb
 2. Set up RVM
-   Since  MRI 1.8.6 is used by Heroku at time of writing link:http://docs.heroku.com/stack
-   we need to install version 1.8.6:
-     rvm install ruby-1.8.6-p399
+     rvm install ruby-1.8.7
    next, create a gemset and let rvmrc take care of switching:
-     echo "rvm --create 1.8.6@witobox" > .rvmrc
+     echo "rvm --create 1.8.7@witobox" > .rvmrc
 3. Set up Gemfile and install the gems:
      gem install bundler --pre
      bundle install
-
+4. script/generate rspec
+5. script/generate forgery
+6. mkdir spec/factories
+7. touch spec/factories/product_factories.rb
 
 ==============================================================================================
 == Welcome to Rails

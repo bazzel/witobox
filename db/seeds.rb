@@ -5,3 +5,28 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+# Dir.glob(File.dirname(__FILE__) + '/../../spec/factories/*.rb').each do |file|
+#   require file
+# end
+
+Product.destroy_all
+
+100.times do |i|
+  h = {
+    :name        => Forgery(:name).company_name,
+    :description => Forgery(:lorem_ipsum).paragraphs,
+    :cents       => Forgery(:basic).number(:at_least => 50, :at_most => 25000),
+    :sold        => Forgery(:basic).boolean
+  }
+  
+  product = Factory.build(:product, h)
+  
+  if product.save
+    p "Product '#{product}' created."
+  else
+    p "Product '#{product}' skipped."
+  end
+  
+end
+
+p "Done!"
