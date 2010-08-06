@@ -1,0 +1,12 @@
+.bundle
+.DS_Store
+.rvmrc
+app/stylesheets/.sass-cache
+bin
+gems/*
+generated
+log/*.log
+public/stylesheets/compiled/*
+rerun.txt
+tmp
+vendor/bundler_gems
