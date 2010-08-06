@@ -1,6 +1,6 @@
 %h2 Our Works
 
-- paginated_section @products, :previous_label => "&laquo; Vorige", :next_label => "Volgende  &raquo;", :page_links => false, :class => "button_01" do
+- paginated_section @products, :previous_label => "&laquo; Vorige", :next_label => "Volgende  &raquo;", :page_links => false do
   - @products.in_groups_of(4, false) do |row_groups|
     - row_groups.each_with_index do |group, i|
       = render :partial => 'product', :object => group, :locals => {:index => i}

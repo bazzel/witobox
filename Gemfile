@@ -6,6 +6,7 @@ gem 'rails', '2.3.8'
 # === All Environments
 gem "compass",          '0.10.3'
 gem 'erubis',           '2.6.6'
+gem 'fancy-buttons',    '0.5.5'
 gem 'forgery',          '0.3.4'
 gem 'haml',             '3.0.15'
 gem 'mysql',            '2.8.1'

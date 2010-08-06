@@ -6,7 +6,7 @@
 // @import "compass/reset";
 @import "templatemo_style";
 @import "compass/utilities/general/clearfix";
-
+@import "fancy-buttons";
 
 #templatemo_content {
   @include clearfix;
@@ -29,11 +29,35 @@
     text-decoration: none;
     background: url(/images/templatemo_button.jpg) no-repeat;    
   }
+}
+
+$button : #B0C31C;
+$hover : #EBEBEB;
+
+.pagination {
+  @include clearfix;
+  clear: both;
+  margin-bottom: 20px;
+  
   .prev_page {
     float: left;
   }
-
   .next_page {
     float: right;
+  }
+  span.disabled {
+    @include fancy-button-structure();
+    @include fancy-button-colors($hover);
+    font-size: 12px;
+    width: 85px;
+    text-align: center;
+  }
+  a.prev_page, a.next_page {
+    @include fancy-button-structure();
+    @include fancy-button-colors($button, $hover);
+    font-size: 12px;
+    color: #333;
+    width: 85px;
+    text-align: center;
   }
 }
