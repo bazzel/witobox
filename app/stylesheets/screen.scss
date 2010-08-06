@@ -5,3 +5,35 @@
 
 // @import "compass/reset";
 @import "templatemo_style";
+@import "compass/utilities/general/clearfix";
+
+
+#templatemo_content {
+  @include clearfix;
+}
+
+.button_01 {
+  @include clearfix;
+  clear: both;
+  margin-bottom: 20px;
+  
+  span.disabled {
+    display: block;
+    width: 122px;
+    height: 30px;
+    padding: 7px 0 0;
+    color: #D4D5CD;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background: url(/images/templatemo_button.jpg) no-repeat;    
+  }
+  .prev_page {
+    float: left;
+  }
+
+  .next_page {
+    float: right;
+  }
+}

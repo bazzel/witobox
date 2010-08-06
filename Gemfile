@@ -11,6 +11,7 @@ gem 'haml',             '3.0.15'
 gem 'mysql',            '2.8.1'
 gem 'paperclip',        '2.3.3'
 gem 'ruby_parser',      '2.0.4'
+gem 'will_paginate',    '2.3.14'
 
 group :development do
   gem 'ruby-debug'
