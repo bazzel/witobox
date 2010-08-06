@@ -10,10 +10,23 @@
 3. Set up Gemfile and install the gems:
      gem install bundler --pre
      bundle install
-4. script/generate rspec
-5. script/generate forgery
-6. mkdir spec/factories
-7. touch spec/factories/product_factories.rb
+4.   script/generate rspec
+5.   script/generate forgery
+6.   mkdir spec/factories
+7.   touch spec/factories/product_factories.rb
+8.   haml --rails .
+
+== Use Dr. Nic's install_theme
+
+I downloaded the CSS template 'templatemo 227 portfolio' from link:http://www.templatemo.com/preview/templatemo_227_portfolio
+into the doc folder.
+Although I use haml, for some reason I had to generate erb files first and convert them to haml afterwards:
+
+  install_theme . doc/templatemo_227_portfolio "#templatemo_content:text" --partial "menu:#templatemo_menu:text" --erb
+  html2haml app/views/layouts/application.html.erb app/views/layouts/application.html.haml
+  html2haml app/views/layouts/_menu.html.erb app/views/layouts/_menu.html.haml
+  compass init rails --sass-dir=app/stylesheets --css-dir=public/stylesheets/compiled
+  sass-convert public/stylesheets/templatemo_style.css app/stylesheets/_templatemo_style.scss
 
 ==============================================================================================
 == Welcome to Rails

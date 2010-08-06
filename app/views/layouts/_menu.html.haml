@@ -1,0 +1,21 @@
+#templatemo_menu
+  %ul
+    %li
+      - link_to root_path do
+        %span Home
+    %li
+      %a{:href => "work_detail.html"}
+        %span>
+        Articles
+    %li
+      %a{:href => "work_detail.html"}
+        %span>
+        News
+    %li
+      %a.current{:href => "index.html"}
+        %span>
+        Gallery
+    %li
+      %a{:href => "work_detail.html"}
+        %span>
+        Contact Us

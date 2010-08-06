@@ -1,6 +1,7 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    abstract (1.0.0)
     actionmailer (2.3.8)
       actionpack (= 2.3.8)
     actionpack (2.3.8)
@@ -12,9 +13,17 @@ GEM
       activesupport (= 2.3.8)
     activesupport (2.3.8)
     columnize (0.3.1)
+    compass (0.10.3)
+      haml (>= 3.0.4)
+    erubis (2.6.6)
+      abstract (>= 1.0.0)
     factory_girl (1.3.2)
     forgery (0.3.4)
     haml (3.0.15)
+    hpricot (0.8.2)
+    install_theme (0.8.2)
+      hpricot (>= 0.8.1)
+      rubigen (>= 1.5.2)
     linecache (0.43)
     mysql (2.8.1)
     paperclip (2.3.3)
@@ -43,19 +52,27 @@ GEM
     rspec-rails (1.3.2)
       rack (>= 1.0.0)
       rspec (>= 1.3.0)
+    rubigen (1.5.5)
+      activesupport (~> 2.3.5)
     ruby-debug (0.10.3)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.3.0)
     ruby-debug-base (0.10.3)
       linecache (>= 0.3)
+    ruby_parser (2.0.4)
+      sexp_processor (~> 3.0)
+    sexp_processor (3.0.4)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  compass (= 0.10.3)
+  erubis (= 2.6.6)
   factory_girl (= 1.3.2)
   forgery (= 0.3.4)
   haml (= 3.0.15)
+  install_theme (= 0.8.2)
   mysql (= 2.8.1)
   paperclip (= 2.3.3)
   rails (= 2.3.8)
@@ -63,3 +80,4 @@ DEPENDENCIES
   rspec (= 1.3.0)
   rspec-rails (= 1.3.2)
   ruby-debug
+  ruby_parser (= 2.0.4)

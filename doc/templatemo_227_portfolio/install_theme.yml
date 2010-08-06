@@ -1,0 +1,9 @@
+--- 
+image_dir: images
+index_path: index.html
+content_path: "#templatemo_content:text"
+no_sass: false
+stylesheet_dir: ""
+javascript_dir: javascripts
+partials: 
+  menu: "#templatemo_menu"
