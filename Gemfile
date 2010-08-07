@@ -18,6 +18,7 @@ group :development do
   gem 'ruby-debug'
   gem 'factory_girl',     '1.3.2'
   gem 'install_theme',    '0.8.2'
+  gem 'mongrel',          '1.1.5'
 end
 
 group :test, :cucumber do

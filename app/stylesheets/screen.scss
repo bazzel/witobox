@@ -4,35 +4,15 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 // @import "compass/reset";
+@import "base";
 @import "templatemo_style";
 @import "compass/utilities/general/clearfix";
+@import "compass/utilities/general/float";
 @import "fancy-buttons";
 
 #templatemo_content {
   @include clearfix;
 }
-
-.button_01 {
-  @include clearfix;
-  clear: both;
-  margin-bottom: 20px;
-  
-  span.disabled {
-    display: block;
-    width: 122px;
-    height: 30px;
-    padding: 7px 0 0;
-    color: #D4D5CD;
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    background: url(/images/templatemo_button.jpg) no-repeat;    
-  }
-}
-
-$button : #B0C31C;
-$hover : #EBEBEB;
 
 .pagination {
   @include clearfix;
@@ -40,19 +20,15 @@ $hover : #EBEBEB;
   margin-bottom: 20px;
   
   .prev_page {
-    float: left;
+    @include float-left;
   }
   .next_page {
-    float: right;
+    @include float-right;
   }
-  span.disabled {
-    @include fancy-button-structure();
-    @include fancy-button-colors($hover);
-    font-size: 12px;
-    width: 85px;
-    text-align: center;
-  }
-  a.prev_page, a.next_page {
+}
+
+.buttons {
+  a, .disabled {
     @include fancy-button-structure();
     @include fancy-button-colors($button, $hover);
     font-size: 12px;

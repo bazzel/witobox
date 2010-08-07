@@ -1,0 +1,16 @@
+%h2= h @product.name
+.product_detail_right
+  .product_img_wrapper
+    = image_tag("templatemo_image_01_big.jpg")
+.product_detail_left
+  %h3 Omschrijving
+  %p= h @product.description
+  .cleaner_h20
+  %h3 Prijs
+  %ul.service_applied
+    %li= h @product.cents
+  .cleaner_h20
+  .buttons
+    = link_to '&laquo; Terug', products_path
+    = link_to 'Bewerken', edit_product_path(@product)
+.cleaner
