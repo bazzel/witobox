@@ -1,5 +1,4 @@
-%h2 Our Works
-
+- title("Our Works")
 - paginated_section @products, :class => 'pagination buttons', :previous_label => "&laquo; Vorige", :next_label => "Volgende  &raquo;", :page_links => false do
   - @products.in_groups_of(4, false) do |row_groups|
     - row_groups.each_with_index do |group, i|

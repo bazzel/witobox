@@ -1,0 +1,15 @@
+.product_detail_right
+  .product_img_wrapper
+    = image_tag @product.photo.url(:big)
+.product_edit_left
+  - semantic_form_for @product, :html => { :multipart => true } do |f|
+    - f.inputs do
+      = f.input :name
+      = f.input :description
+      = f.input :cents
+      = f.input :sold
+      = f.input :photo
+    - f.buttons do
+      = submit_tag
+      = cancel_link t('buttons.cancel'), products_path(:page => params[:page])
+.cleaner

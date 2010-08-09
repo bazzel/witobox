@@ -2,3 +2,14 @@
 
 $button : #B0C31C;
 $hover  : #EBEBEB;
+
+$button-positive-text: #529214;
+$button-positive: $hover;
+$button-positive-hover: #E6EFC2;
+$button-positive-active: $button-positive-text;
+
+$button-negative: $hover;
+$button-negative-hover: #fbe3e4;
+$button-negative-text: #d12f19;
+$button-negative-active: $button-negative-text;
+ 

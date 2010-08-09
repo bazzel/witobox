@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   def index
-    @products = Product.for_sale.paginate :page => params[:page], :per_page => 8
+    # @products = Product.for_sale.paginate :page => params[:page], :per_page => 8
+    @products = Product.paginate :page => params[:page], :per_page => 8
 
     respond_to do |format|
       format.html # index.html.erb
@@ -38,34 +39,33 @@ class ProductsController < ApplicationController
   end
 
   # POST /products
-  # POST /products.xml
   def create
     @product = Product.new(params[:product])
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to(@product, :notice => 'Product was successfully created.') }
-        format.xml  { render :xml => @product, :status => :created, :location => @product }
+    if @product.save
+      if params[:product][:photo].blank?
+        redirect_to(@product, :notice => 'Product was successfully created.')
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
+        render :action => 'crop'
       end
+    else
+      render :action => "new"
     end
+
   end
 
   # PUT /products/1
-  # PUT /products/1.xml
   def update
     @product = Product.find(params[:id])
 
-    respond_to do |format|
-      if @product.update_attributes(params[:product])
-        format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
-        format.xml  { head :ok }
+    if @product.update_attributes(params[:product])
+      if params[:product][:photo].blank?
+        redirect_to(@product, :notice => 'Product was successfully updated.')
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
+        render :action => 'crop'
       end
+    else
+      render :action => "edit"
     end
   end
 

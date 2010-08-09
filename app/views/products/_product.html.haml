@@ -1,5 +1,5 @@
 .product_box{:class => index < 3 && 'margin_r40'}
   .thumb_wrapper
-    = link_to(image_tag("templatemo_image_01.jpg"), product)
+    = link_to(image_tag(product.photo.url(:small)), product_path(product, :page => params[:page]))
   %h3= product.name
   %p= product.description

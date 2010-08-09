@@ -1,0 +1,91 @@
+/* line 3, sass/application.sass */
+body {
+  background-color: #4b7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+/* line 9, sass/application.sass */
+a {
+  color: blue;
+}
+/* line 11, sass/application.sass */
+a img {
+  border: none;
+}
+
+/* line 14, sass/application.sass */
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+/* line 19, sass/application.sass */
+#container {
+  width: 75%;
+  margin: 0 auto;
+  background: white;
+  padding: 20px 40px;
+  border: solid 1px black;
+  margin-top: 20px;
+}
+
+/* line 27, sass/application.sass */
+#flash_notice,
+#flash_error {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+/* line 32, sass/application.sass */
+#flash_notice {
+  background-color: #ccffcc;
+  border: solid 1px #66cc66;
+}
+
+/* line 36, sass/application.sass */
+#flash_error {
+  background-color: #ffcccc;
+  border: solid 1px #cc6666;
+}
+
+/* line 40, sass/application.sass */
+.fieldWithErrors {
+  display: inline;
+}
+
+/* line 43, sass/application.sass */
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #cf0000;
+  padding: 0;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 50, sass/application.sass */
+#errorExplanation h2 {
+  text-align: left;
+  padding: 5px 5px 5px 15px;
+  margin: 0;
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #cc0000;
+  color: white;
+}
+/* line 59, sass/application.sass */
+#errorExplanation p {
+  color: #333333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+/* line 63, sass/application.sass */
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+/* line 65, sass/application.sass */
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}

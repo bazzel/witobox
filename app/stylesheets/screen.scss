@@ -9,9 +9,34 @@
 @import "compass/utilities/general/clearfix";
 @import "compass/utilities/general/float";
 @import "fancy-buttons";
+@import "formtastic_changes";
 
 #templatemo_content {
   @include clearfix;
+  
+  .title {
+    .buttons {
+      text-align: right;
+      margin-bottom: -42px;
+    }
+  }
+  
+  .photo_crop {
+    float: left;
+    margin-right: 20px;
+    .product_img_wrapper {
+      display: block;
+      width: 471px;
+      height: 384px;
+      padding: 7px;
+      background: url(/images/preview_image_bg.jpg) no-repeat;
+      img {
+        border: 1px solid #ffffff;
+        width: 470px;
+        height: 352px;
+      } 
+    }
+  }    
 }
 
 .pagination {
@@ -27,13 +52,40 @@
   }
 }
 
+.product_edit_left {
+  float: left;
+  width: 455px;
+}
+
+
 .buttons {
-  a, .disabled {
+  button, a, .disabled {
     @include fancy-button-structure();
     @include fancy-button-colors($button, $hover);
     font-size: 12px;
-    color: #333;
     width: 85px;
     text-align: center;
+    height: 22px;
   }
+  button {
+    width: 120px;
+    height: 34px;
+  }
+  
+  .positive {
+    color: $button-positive-text !important;
+    @include fancy-button-colors($button-positive, $button-positive-hover, $button-positive-active);
+    &:active {
+      color:#fff !important;
+    }
+  }
+
+  .negative {
+    color: $button-negative-text !important;
+    @include fancy-button-colors($button-negative, $button-negative-hover, $button-negative-active);
+    &:active {
+      color:#fff !important;
+    }
+  }
+  
 }
