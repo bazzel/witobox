@@ -192,6 +192,8 @@ nl:
       new: Product toevoegen
   flash:
     products:
+      update:
+        success: Het product '{{product}}' is bijgewerkt
       destroy:
         success: Het product '{{product}}' is verwijderd
   products:

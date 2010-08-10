@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_filter :params_page
+  
   # GET /products
   # GET /products.xml
   def index
@@ -60,7 +62,7 @@ class ProductsController < ApplicationController
 
     if @product.update_attributes(params[:product])
       if params[:product][:photo].blank?
-        redirect_to(product_path(@product, :page => params[:page]), :notice => 'Product was successfully updated.')
+        redirect_to(product_path(@product, :page => params[:page]), :notice => t('flash.products.update.success', :product => "#{@product}"))
       else
         render :action => 'crop'
       end
@@ -76,5 +78,12 @@ class ProductsController < ApplicationController
     @product.destroy
     
     redirect_to(products_path(:page => params[:page]), :notice => t('flash.products.destroy.success', :product => "#{@product}"))
+  end
+  
+  private
+  def params_page
+    if params[:page].blank?
+      params[:page] = 1
+    end
   end
 end
