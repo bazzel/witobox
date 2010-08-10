@@ -14,6 +14,7 @@ class Product < ActiveRecord::Base
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 2.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
+  validates_numericality_of :amount, :greater_than_or_equal_to => 0
   
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   
@@ -35,9 +36,28 @@ class Product < ActiveRecord::Base
     @geometry[style] ||= Paperclip::Geometry.from_file(photo.path(style))
   end
   
+  def amount
+    return unless cents
+    cents.to_f / 100
+  end
+  
+  def amount=(value)
+    self.cents = "#{value}".gsub(/,/, '.').to_f * 100
+  end
+  
+  def to_s
+    name
+  end
+  
   private
   
   def reprocess_photo
     photo.reprocess!
   end
+  
+  # Needed for validating amount attribute.
+  def amount_before_type_cast
+    @amount
+  end
+    
 end

@@ -1,0 +1,28 @@
+.notice, .alert {
+  height: 45px;
+  line-height: 45px;
+  border: 1px solid #e2e2e2;
+  margin: 1em 0px 2em;
+  background: url(/images/flash.png) 1px 1px repeat-x;
+  font-size: 14px;
+  p {
+    margin: 0;
+    padding: 0;
+    padding-left: 52px;
+  }
+}
+
+.notice {
+  color: #315f0b;
+  p {
+    background: url(/images/notice.png) 1px 1px no-repeat;
+  }
+}
+
+.alert {
+  color: #de0000;
+  p {
+    background: url(/images/alert.png) 1px 1px no-repeat;
+  }
+}
+  

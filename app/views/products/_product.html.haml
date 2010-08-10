@@ -1,5 +1,12 @@
 .product_box{:class => index < 3 && 'margin_r40'}
   .thumb_wrapper
     = link_to(image_tag(product.photo.url(:small)), product_path(product, :page => params[:page]))
-  %h3= product.name
-  %p= product.description
+  - if product.sold
+    %p.sold= t('activerecord.attributes.product.sold')
+  %h3{ :title => h(product.name) }= truncate(h(product.name), :length => 21)
+  %p.amount= number_to_currency(product.amount)
+  %p{ :title => h(product.description) }= truncate(h(product.description), :length => 100)
+  / Admin only
+  .actions
+    = link_to t('buttons.edit'), edit_product_path(product, :page => params[:page]), :class => 'icon edit'
+    = link_to t('buttons.delete'), product_path(product, :page => params[:page]), :method => :delete, :confirm => t(:'.confirm', :product => "#{product}"), :class => 'icon delete'

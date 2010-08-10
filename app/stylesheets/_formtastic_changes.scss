@@ -12,12 +12,39 @@ The following style may be *conditionally* included for improved support on olde
 form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 --------------------------------------------------------------------------------------------------*/
+
 form.formtastic {
   fieldset {
     &.buttons {
       button, a {
         float: right;
         margin-left: 6px;
+      }
+    }
+    
+    ol {
+      li {
+        label { 
+          font-size: 1.2em; 
+          width: 30%;
+        }
+        &.string {
+          input {
+            @include form-input;
+            width: 67%;
+          }
+        }
+        &.text {
+          textarea {
+            @include form-input;
+            max-width: 67%;
+          }
+        }
+        &.boolean {
+          label {
+            padding-left: 30%;
+          }
+        }
       }
     }
   }

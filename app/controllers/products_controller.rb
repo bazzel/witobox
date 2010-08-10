@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.xml
   def index
     # @products = Product.for_sale.paginate :page => params[:page], :per_page => 8
-    @products = Product.paginate :page => params[:page], :per_page => 8
+    @products = Product.paginate :page => params[:page], :per_page => 8, :order => :cents
 
     respond_to do |format|
       format.html # index.html.erb
@@ -60,7 +60,7 @@ class ProductsController < ApplicationController
 
     if @product.update_attributes(params[:product])
       if params[:product][:photo].blank?
-        redirect_to(@product, :notice => 'Product was successfully updated.')
+        redirect_to(product_path(@product, :page => params[:page]), :notice => 'Product was successfully updated.')
       else
         render :action => 'crop'
       end
@@ -74,10 +74,7 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(products_url) }
-      format.xml  { head :ok }
-    end
+    
+    redirect_to(products_path(:page => params[:page]), :notice => t('flash.products.destroy.success', :product => "#{@product}"))
   end
 end

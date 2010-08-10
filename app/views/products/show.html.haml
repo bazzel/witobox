@@ -9,7 +9,7 @@
   .cleaner_h20
   %h3= t('activerecord.attributes.product.amount')
   %ul.service_applied
-    %li= h @product.cents
+    %li= number_to_currency(@product.amount)
   .cleaner_h20
   .buttons
     = link_to t('buttons.back'), products_path(:page => params[:page])

@@ -34,8 +34,10 @@
       / end of templatemo_banner
     / end of templatemo_banner_wrapper
     #templatemo_content
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
+      - flash.each do |type, message|
+        %div{ :class => type }
+          %p= message
+      
       .title
         .buttons
           = link_to "Nieuw", new_product_path(:page => params[:page])

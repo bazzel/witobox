@@ -64,6 +64,7 @@ nl:
         description: Omschrijving
         photo: Foto
         sold: Verkocht
+        amount: Prijs
   time: 
     am: "'s ochtends"
     formats: 
@@ -182,6 +183,18 @@ nl:
     submit: Opslaan
     edit: Bewerken
     back: '&laquo; Terug'
+    previous: "&laquo; Vorige"
+    next: "Volgende  &raquo;"
+    delete: Verwijderen
   form:
     title:
       edit: '{{name}} bewerken'
+      new: Product toevoegen
+  flash:
+    products:
+      destroy:
+        success: Het product '{{product}}' is verwijderd
+  products:
+    product:
+      confirm: Weet je zeker dat je het product '{{product}}' wilt verwijderen?
+    

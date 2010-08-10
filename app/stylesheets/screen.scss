@@ -8,19 +8,21 @@
 @import "templatemo_style";
 @import "compass/utilities/general/clearfix";
 @import "compass/utilities/general/float";
+@import "compass/utilities/text/replacement";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
 @import "fancy-buttons";
 @import "formtastic_changes";
+@import "flash";
 
 #templatemo_content {
   @include clearfix;
-  
   .title {
     .buttons {
       text-align: right;
       margin-bottom: -42px;
     }
   }
-  
   .photo_crop {
     float: left;
     margin-right: 20px;
@@ -36,14 +38,42 @@
         height: 352px;
       } 
     }
-  }    
+  }
+  .product_box {
+    position: relative;
+    p.amount {
+      //font-weight: bold;
+      margin-top: -19px;
+      text-align: right;
+      color: #006695;
+    }
+    p.sold {
+      position: absolute;
+      top: 113px;
+      left: 50%;
+      color: white;
+      background: black;
+      padding: 6px 0;
+      margin-left: -95px;
+      text-align: center;
+      font-weight: bold;
+      width: 190px;
+    }
+  }
 }
 
+.actions {
+  a.edit {
+    float: left;
+  }
+  a.delete {
+    float: right;
+  }
+}
 .pagination {
   @include clearfix;
   clear: both;
   margin-bottom: 20px;
-  
   .prev_page {
     @include float-left;
   }
@@ -57,12 +87,11 @@
   width: 455px;
 }
 
-
 .buttons {
   button, a, .disabled {
     @include fancy-button-structure();
     @include fancy-button-colors($button, $hover);
-    font-size: 12px;
+    font-size: 1em;
     width: 85px;
     text-align: center;
     height: 22px;
@@ -71,7 +100,6 @@
     width: 120px;
     height: 34px;
   }
-  
   .positive {
     color: $button-positive-text !important;
     @include fancy-button-colors($button-positive, $button-positive-hover, $button-positive-active);
@@ -79,7 +107,6 @@
       color:#fff !important;
     }
   }
-
   .negative {
     color: $button-negative-text !important;
     @include fancy-button-colors($button-negative, $button-negative-hover, $button-negative-active);
@@ -87,5 +114,4 @@
       color:#fff !important;
     }
   }
-  
 }
