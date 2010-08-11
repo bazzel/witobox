@@ -34,6 +34,11 @@ form.formtastic {
             width: 67%;
           }
         }
+        &.password {
+          input {
+            @include form-input;
+          }
+        }
         &.text {
           textarea {
             @include form-input;

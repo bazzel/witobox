@@ -17,6 +17,8 @@ GEM
     compass (0.10.3)
       haml (>= 3.0.4)
     daemons (1.1.0)
+    devise (1.0.8)
+      warden (~> 0.10.3)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     factory_girl (1.3.2)
@@ -79,6 +81,8 @@ GEM
       sexp_processor (~> 3.0)
     sexp_processor (3.0.4)
     validation_reflection (0.3.8)
+    warden (0.10.7)
+      rack (>= 1.0.0)
     will_paginate (2.3.14)
 
 PLATFORMS
@@ -86,6 +90,7 @@ PLATFORMS
 
 DEPENDENCIES
   compass (= 0.10.3)
+  devise (= 1.0.8)
   erubis (= 2.6.6)
   factory_girl (= 1.3.2)
   fancy-buttons (= 0.5.5)

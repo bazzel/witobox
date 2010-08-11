@@ -22,4 +22,13 @@ module ApplicationHelper
   def cancel_link(value = t('buttons.cancel'), url = :back, options = {})
     link_to value, url, options.merge(:class => 'negative')
   end
+  
+  def flashes
+    content = ""
+    flash.each do |type, message|
+      content << content_tag(:div, content_tag(:p, message), :class => type)
+    end
+    
+    content
+  end
 end

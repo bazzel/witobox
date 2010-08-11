@@ -1,4 +1,4 @@
-- title("Our Works")
+- title(t(:'.title'))
 - paginated_section @products, :class => 'pagination buttons', :previous_label => t('buttons.previous'), :next_label => t('buttons.next'), :page_links => false do
   - @products.in_groups_of(4, false) do |row_groups|
     - row_groups.each_with_index do |group, i|

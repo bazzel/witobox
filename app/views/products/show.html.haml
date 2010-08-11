@@ -11,7 +11,11 @@
   %ul.service_applied
     %li= number_to_currency(@product.amount)
   .cleaner_h20
-  .buttons
-    = link_to t('buttons.back'), products_path(:page => params[:page])
-    = link_to t('buttons.edit'), edit_product_path(@product, :page => params[:page])
+  - if user_signed_in?
+    .buttons
+      = link_to t('buttons.back'), products_path(:page => params[:page])
+      = link_to t('buttons.edit'), edit_product_path(@product, :page => params[:page])
+  - else
+    .buttons
+      = mail_to(APP_CONFIG['email_address'], t(:'.mail_to.name'), :subject => t(:'.mail_to.subject', :product => @product), :body => t(:'.mail_to.body', :product => @product, :product_amount => number_to_currency(@product.amount), :url => product_url), :encode => :hex)
 .cleaner

@@ -1,7 +1,7 @@
 !!!
 %html{html_attrs}
   %head
-    %title= h(yield(:title) || "WitoBox")
+    %title= [APP_CONFIG['app_title'], h(yield(:title))].join(" - ")
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
 
     = formtastic_stylesheet_link_tag
@@ -13,6 +13,7 @@
       = stylesheet_link_tag 'compiled/ie6.css', :media => 'screen, projection'
 
     = google_jquery
+    = javascript_include_tag 'jquery.application', :cache => true
     = yield(:head)
   %body
     #templatemo_site_title_bar_wrapper
@@ -34,13 +35,12 @@
       / end of templatemo_banner
     / end of templatemo_banner_wrapper
     #templatemo_content
-      - flash.each do |type, message|
-        %div{ :class => type }
-          %p= message
+      = flashes
       
       .title
-        .buttons
-          = link_to "Nieuw", new_product_path(:page => params[:page])
+        - if user_signed_in?
+          .buttons
+            = link_to "Nieuw", new_product_path(:page => params[:page])
         %h2= yield(:title)
       
       = yield

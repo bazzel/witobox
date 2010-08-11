@@ -1,0 +1,14 @@
+defaults: &defaults
+  app_title: WitoBox
+  email_address: john@example.com
+  
+development:
+  <<: *defaults
+  email_address: patrick.baselier@gmail.com
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  email_address: toosvanvroonhoven@home.nl

@@ -4,18 +4,9 @@
       - link_to root_path do
         %span Home
     %li
-      %a{:href => "work_detail.html"}
-        %span>
-        Articles
+      = mail_to(APP_CONFIG['email_address'], t(:'.contact_us.title'), :subject => t(:'.contact_us.subject'), :encode => :hex)
     %li
-      %a{:href => "work_detail.html"}
-        %span>
-        News
-    %li
-      %a.current{:href => "index.html"}
-        %span>
-        Gallery
-    %li
-      %a{:href => "work_detail.html"}
-        %span>
-        Contact Us
+      - unless user_signed_in?
+        = link_to t('buttons.sign_in'), new_user_session_path
+      - else
+        = link_to t('buttons.sign_out'), destroy_user_session_path

@@ -15,6 +15,15 @@
 @import "formtastic_changes";
 @import "flash";
 
+
+/* Sign up
+--------------------------------------------------------------------------------------------------*/
+.sign_up {
+  width: 450px;
+  margin: 0 auto;
+}
+
+
 #templatemo_content {
   @include clearfix;
   .title {

@@ -4,7 +4,8 @@ source 'http://rubygems.org'
 gem 'rails', '2.3.8'
 
 # === All Environments
-gem "compass",                '0.10.3'
+gem 'compass',                '0.10.3'
+gem 'devise',                 '1.0.8'
 gem 'erubis',                 '2.6.6'
 gem 'factory_girl',           '1.3.2'
 gem 'fancy-buttons',          '0.5.5'

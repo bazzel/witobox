@@ -65,6 +65,10 @@ nl:
         photo: Foto
         sold: Verkocht
         amount: Prijs
+      user:
+        username: Gebruikersnaam
+        password: Wachtwoord
+        remember_me: Aangemeld blijven
   time: 
     am: "'s ochtends"
     formats: 
@@ -186,17 +190,33 @@ nl:
     previous: "&laquo; Vorige"
     next: "Volgende  &raquo;"
     delete: Verwijderen
-  form:
-    title:
-      edit: '{{name}} bewerken'
-      new: Product toevoegen
+    sign_in: Aanmelden
+    sign_out: Afmelden
   flash:
     products:
       update:
         success: Het product '{{product}}' is bijgewerkt
       destroy:
         success: Het product '{{product}}' is verwijderd
+  sessions:
+    new:
+      title: Aanmelden
   products:
+    index:
+      title: Producten
+    show:
+      mail_to:
+        name: Reageer
+        subject: "[WitoBox] {{product}}"
+        body: "Hallo,\n\nOp {{url}} kwam ik het product '{{product}}' van {{product_amount}} tegen.\n\nIk wil graag dat u hierover contact met me opneemt.\n\n Met vriendelijke groet, \n\n[...Vul hier uw naam in...]"
+    edit:
+      title: '{{name}} bewerken'
+    new:
+      title: Product toevoegen
     product:
       confirm: Weet je zeker dat je het product '{{product}}' wilt verwijderen?
-    
+  layouts:
+    menu:
+      contact_us:
+        title: Info
+        subject: "[WitoBox] Info"

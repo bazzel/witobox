@@ -9,24 +9,5 @@
 #   require file
 # end
 
-Product.destroy_all
-
-100.times do |i|
-  h = {
-    :name        => Forgery(:name).company_name,
-    :description => Forgery(:lorem_ipsum).paragraphs,
-    :cents       => Forgery(:basic).number(:at_least => 50, :at_most => 25000),
-    :sold        => Forgery(:basic).boolean
-  }
-  
-  product = Factory.build(:product, h)
-  
-  if product.save
-    p "Product '#{product}' created."
-  else
-    p "Product '#{product}' skipped."
-  end
-  
-end
-
-p "Done!"
+pw = '1122334455'
+User.create(:username => 'wito', :email => 'toosvanvroonhoven@home.nl', :password => pw, :password_confirmation => pw)
