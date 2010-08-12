@@ -4,7 +4,7 @@
     %title= [APP_CONFIG['app_title'], h(yield(:title))].join(" - ")
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
 
-    = formtastic_stylesheet_link_tag
+    = stylesheet_link_tag 'formtastic', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'compiled/print.css', :media => 'print'
     /[if IE]
