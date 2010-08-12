@@ -1,6 +1,5 @@
 .product_detail_right
   .product_img_wrapper
-    = text_field :test, 'xxx'
     = image_tag @product.photo.url(:big)
 .product_edit_left
   - semantic_form_for @product, :html => { :multipart => true } do |f|
