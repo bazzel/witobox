@@ -50,6 +50,11 @@ form.formtastic {
             padding-left: 30%;
           }
         }
+        p {
+          &.inline-hints, &.inline-errors {
+            margin-left: 30%;
+          }
+        }
       }
     }
   }

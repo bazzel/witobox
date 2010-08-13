@@ -37,6 +37,12 @@ class ProductsController < ApplicationController
         render :action => 'crop'
       end
     else
+      logger.error "[#{self.class}] #{@product.errors.full_messages.to_sentence}"
+
+      if @product.photo? && @product.errors.on(:photo_content_type)
+        logger.error "[#{self.class}] Content type of the file assigned is: #{params[:product][:photo].content_type}" 
+      end
+
       render :action => "new"
     end
 
@@ -53,6 +59,12 @@ class ProductsController < ApplicationController
         render :action => 'crop'
       end
     else
+      logger.error "[#{self.class}] #{@product.errors.full_messages.to_sentence}"
+
+      if @product.photo? && @product.errors.on(:photo_content_type)
+        logger.error "[#{self.class}] Content type of the file assigned is: #{params[:product][:photo].content_type}" 
+      end
+
       render :action => "edit"
     end
   end

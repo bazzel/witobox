@@ -11,10 +11,13 @@ class Product < ActiveRecord::Base
   #
   validates_presence_of :name
   validates_presence_of :description
-  validates_attachment_presence :photo
-  validates_attachment_size :photo, :less_than => 2.megabytes
-  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png']
+  validates_attachment_presence :photo, :message => I18n.t('activerecord.errors.messages.photo_file_name')
+  validates_attachment_size :photo, :less_than => 2.megabytes, 
+                                    :message => I18n.t('activerecord.errors.messages.photo_file_size')
+  validates_attachment_content_type :photo, :content_type => ['image/jpeg', 'image/png', 'image/pjpeg', 'image/x-png'],
+                                            :message => I18n.t('activerecord.errors.messages.photo_content_type')
   validates_numericality_of :amount, :greater_than_or_equal_to => 0
+  validate :consolidate_photo_validations
   
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   
@@ -60,4 +63,17 @@ class Product < ActiveRecord::Base
     @amount
   end
     
+  # Put the first of the validation errors on photo (photo_file_name, photo_file_size, photo_content_type)
+  # so they will be displayed with the photo form element in the view.
+  def consolidate_photo_validations
+
+    [:photo_file_name, :photo_file_size, :photo_content_type].each do |name|
+      if (err = errors.on(name))
+        errors.add(:photo, err)
+        break
+      end
+    end
+    
+  end
+
 end

@@ -53,6 +53,9 @@ nl:
         taken: is niet beschikbaar
         inclusion: is niet in de lijst opgenomen
         not_a_number: is geen getal
+        photo_file_name: "moet opgegeven zijn"
+        photo_file_size: "het bestand mag niet groter zijn dan :max bytes"
+        photo_content_type: "het bestand is geen geldige afbeelding"
       template: 
         body: "Controleer alstublieft de volgende velden:"
         header: 
