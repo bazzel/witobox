@@ -1,11 +1,24 @@
 class Product < ActiveRecord::Base
-  has_attached_file :photo, :convert_options => { :all => "-strip" }, 
-                            :styles => {
-                              :crop => ["500x500>", :jpg], 
-                              :big => ["470x470>", :jpg], 
-                              :small => ["198x146!", :jpg]
-                            },
-                            :processors => [:cropper]
+  
+  # Use Amazon S3 only in production mode.
+  PHOTO_S3_OPTIONS = Rails.env == 'production' ? {
+    :storage => :s3, 
+    :s3_credentials => APP_CONFIG['s3_credentials'],
+    :bucket => 'witobox',
+    :path => "public/system/:attachment/:id/:style/:filename"
+  } : {}
+  
+  has_attached_file :photo, {
+   :convert_options => {
+     :all => "-strip"
+   },
+   :styles => {
+     :crop => ["500x500>", :jpg], 
+     :big => ["470x470>", :jpg], 
+     :small => ["198x146!", :jpg]
+   },
+   :processors => [:cropper]
+  }.merge(PHOTO_S3_OPTIONS)
 
   # === Validations
   #
@@ -36,7 +49,8 @@ class Product < ActiveRecord::Base
   
   def photo_geometry(style = :original)
     @geometry ||= {}
-    @geometry[style] ||= Paperclip::Geometry.from_file(photo.path(style))
+    # @geometry[style] ||= Paperclip::Geometry.from_file(photo.path(style))
+    @geometry[style] ||= Paperclip::Geometry.from_file(photo.to_file(style)) # Amazon S3
   end
   
   def amount

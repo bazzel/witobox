@@ -1,6 +1,25 @@
 defaults: &defaults
   app_title: WitoBox
   email_address: john@example.com
+  # Amazon S3 data is stored them in environment vars.
+  # 
+  # 1. You can set these values in the ~/.bashrc for the user:
+  # 
+  #   export S3_KEY=mykey
+  #   export S3_SECRET=mysecret
+  # 
+  # 2. Or, specify them when running the local server (or any other command, like a rake task) by prepending the shell command:
+  # 
+  #   $ S3_KEY=mykey S3_SECRET=mysecret script/server
+  # 
+  # 3. Add them to a Heroku configurations:
+  # 
+  #   heroku config:add S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
+  # 
+  s3_credentials:
+    access_key_id: <%= ENV['S3_KEY'] %>
+    secret_access_key: <%= ENV['S3_SECRET'] %>
+  
   
 development:
   <<: *defaults
