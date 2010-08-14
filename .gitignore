@@ -6,7 +6,14 @@ bin
 gems/*
 generated
 log/*.log
+
 public/stylesheets/compiled/*
+# Sass generated.
+public/stylesheets/ie.css
+public/stylesheets/ie6.css
+public/stylesheets/print.css
+public/stylesheets/screen.css
+
 public/system/*
 rerun.txt
 tmp
