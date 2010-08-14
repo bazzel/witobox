@@ -185,6 +185,10 @@ nl:
         one: "langer dan \xC3\xA9\xC3\xA9n jaar"
         other: langer {{count}} jaar
       half_a_minute: halve minuut
+  formtastic:
+    hints:
+      product:
+        amount: Bv. 24.95
   buttons:
     cancel: Annuleren
     submit: Opslaan

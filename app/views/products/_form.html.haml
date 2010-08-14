@@ -7,7 +7,7 @@
     - f.inputs do
       = f.input :name
       = f.input :description
-      = f.input :amount, :input_html => {:value => number_with_precision(@product.amount)}
+      = f.input :amount#, :input_html => {:value => number_with_precision(@product.amount)}
       = f.input :sold
       = f.input :photo
     - f.buttons do
