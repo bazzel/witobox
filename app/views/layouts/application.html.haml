@@ -14,6 +14,9 @@
 
     = google_jquery
     = javascript_include_tag 'jquery.application', :cache => true
+    = javascript_include_tag 'XMLHttpRequest' ,'v2.standalone.full.min', 'v2.config', 'v2.rails'
+    = javascript_for_validatious
+    
     = yield(:head)
   %body
     #templatemo_site_title_bar_wrapper

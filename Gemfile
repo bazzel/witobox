@@ -16,6 +16,7 @@ gem 'mysql',                  '2.8.1'
 gem 'paperclip',              '2.3.3'
 gem 'ruby_parser',            '2.0.4'
 gem 'validation_reflection',  '0.3.8'
+gem 'validatious-on-rails',   '0.4.8'
 gem 'will_paginate',          '2.3.14'
 
 group :development do

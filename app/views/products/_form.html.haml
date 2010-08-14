@@ -2,7 +2,7 @@
   .product_img_wrapper
     = image_tag @product.photo.url(:big)
 .product_edit_left
-  - semantic_form_for @product, :html => { :multipart => true } do |f|
+  - semantic_form_for @product, :html => { :multipart => true, :class => 'validate' } do |f|
     = hidden_field_tag :page, params[:page]
     - f.inputs do
       = f.input :name
@@ -10,7 +10,8 @@
       = f.input :amount, :input_html => {:value => number_with_precision(@product.amount)}
       = f.input :sold
       = f.input :photo
-    %fieldset.buttons
-      = submit_tag
-      = cancel_link t('buttons.cancel'), products_path(:page => params[:page])
+    - f.buttons do
+      = f.commit_button t('buttons.submit'), :button_html => {:class => 'commit'}
+      %li
+        = cancel_link t('buttons.cancel'), products_path(:page => params[:page])
 .cleaner

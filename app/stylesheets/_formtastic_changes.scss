@@ -16,6 +16,12 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 form.formtastic {
   fieldset {
     &.buttons {
+      ol {
+        li {
+          float: right;
+          margin-left: 6px;
+        }
+      }
       button, a {
         float: right;
         margin-left: 6px;
@@ -48,6 +54,12 @@ form.formtastic {
         &.boolean {
           label {
             padding-left: 30%;
+          }
+        }
+        ul.errors {
+          margin-left: 30%;
+          li {
+            @include no-bullet;
           }
         }
         p {

@@ -16,7 +16,7 @@ module ApplicationHelper
   end
   
   def submit_tag(value = t('buttons.submit'), options = {})
-    button_tag value, options.merge(:class => 'positive')
+    button_tag value, options.merge(:class => [options[:class], 'positive'].compact.join(' '))
   end
   
   def cancel_link(value = t('buttons.cancel'), url = :back, options = {})

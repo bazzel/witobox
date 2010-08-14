@@ -4,6 +4,6 @@
     = f.input :password
     - if devise_mapping.rememberable?
       = f.input :remember_me, :as => :boolean 
-  %fieldset.buttons
-    = submit_tag t('buttons.sign_in')
+  - f.buttons do
+    = f.commit_button t('buttons.sign_in')
   = render :partial => "shared/devise_links"

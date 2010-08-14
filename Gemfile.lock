@@ -81,6 +81,7 @@ GEM
       sexp_processor (~> 3.0)
     sexp_processor (3.0.4)
     validation_reflection (0.3.8)
+    validatious-on-rails (0.4.8)
     warden (0.10.7)
       rack (>= 1.0.0)
     will_paginate (2.3.14)
@@ -109,4 +110,5 @@ DEPENDENCIES
   ruby-debug
   ruby_parser (= 2.0.4)
   validation_reflection (= 0.3.8)
+  validatious-on-rails (= 0.4.8)
   will_paginate (= 2.3.14)
