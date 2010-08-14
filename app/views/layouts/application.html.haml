@@ -46,44 +46,4 @@
       = yield
     / end of templatemo_content
     #templatemo_content_bottom
-    #templatemo_footer_wrapper
-      #templatemo_footer
-        .section_w220
-          %h4 Partners
-          %ul.footer_list_menu
-            %li
-              %a{:href => "http://www.templatemo.com/page/1", :target => "_parent"} Free CSS Templates
-            %li
-              %a{:href => "http://www.flashmo.com/page/1", :target => "_parent"} Flash Templates
-            %li
-              %a{:href => "http://www.templatemo.com/page/2", :target => "_parent"} Website Templates
-            %li
-              %a{:href => "http://www.webdesignmo.com/blog", :target => "_parent"} Web Design Blog
-            %li
-              %a{:href => "http://www.koflash.com", :target => "_blank"} Flash Websites Gallery
-        .section_w220
-          %h4 Explore
-          %ul.footer_list_menu
-            %li
-              %a{:href => "#"} Our Company
-            %li
-              %a{:href => "#"} Web Design
-            %li
-              %a{:href => "#"} Portfolio
-            %li
-              %a{:href => "#"} Contact Us
-        .section_w220
-          %h4 XHTML/CSS validators
-          %p Pellentesque eget diam diam. Donec ligula ligula, tempor et vulputate vitae, gravida ut ipsum.
-          %a{:href => "http://validator.w3.org/check?uri=referer"}
-            %img{:alt => "Valid XHTML 1.0 Transitional", :border => "0", :height => "31", :src => "http://www.w3.org/Icons/valid-xhtml10", :style => "border:0;width:88px;height:31px", :vspace => "8", :width => "88"}/
-          %a{:href => "http://jigsaw.w3.org/css-validator/check/referer"}
-            %img{:alt => "Valid CSS!", :border => "0", :src => "http://jigsaw.w3.org/css-validator/images/vcss-blue", :style => "border:0;width:88px;height:31px", :vspace => "8"}/
-        .section_w220
-          %h4 About This Site
-          %p
-            Nunc sed diam sed dui iaculis pharetra eu sed elit. Nunc arcu sapien, pellentesque at posuere nec, tincidunt dignissim enim. Ut sem mauris, aliquet ut sagittis vitae, condimentum eget augue.
-        .cleaner
-      / end of footer
-      .cleaner
-    / end of templatemo_footer_wrapper
+    / = yield(:footer) || render_or_default('footer')
