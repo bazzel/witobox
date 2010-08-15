@@ -5,7 +5,7 @@
     = image_tag @product.photo.url(:big)
 .product_detail_left
   %h3= t('activerecord.attributes.product.description')
-  %p= h @product.description
+  %p= simple_format(h @product.description)
   .cleaner_h20
   %h3= t('activerecord.attributes.product.amount')
   %ul.service_applied

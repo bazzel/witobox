@@ -5,7 +5,7 @@
     %p.sold= t('activerecord.attributes.product.sold')
   %h3{ :title => h(product.name) }= truncate(h(product.name), :length => 21)
   %p.amount= number_to_currency(product.amount)
-  %p{ :title => h(product.description) }= truncate(h(product.description), :length => 100)
+  = simple_format(truncate(h(product.description), :length => 100), :title => h(product.description))
   / Admin only
   - if user_signed_in?
     .actions
